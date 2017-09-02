@@ -24,7 +24,7 @@ $("#add-train").on("click", function(event){
 		var frequencyInput = $("#frequency-input").val().trim();
 
 		var newTrain = {
-			name:  trainName,
+			name: trainName,
 			destination: destination,
 			firstTrain: firstTrain,
 			frequency: frequencyInput,
@@ -37,16 +37,15 @@ $("#add-train").on("click", function(event){
 		$("#first-train-input").val("");
 		$("#frequency-input").val("");
 
-
+});
 	database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
 		var fName = childSnapshot.val().name;
 		var fDestination = childSnapshot.val().destination;
 
-		// var firstTrain = moment($("#first-train-input").val().trim(), "HHmm").subtract(5, "years").format("X");;
+		var firstTrain = moment($("#first-train-input").val().trim(), "HHmm").subtract(5, "years").format("HHmm");;
 		var frequencyInput = $("#frequency-input").val().trim();
 		var fTrainInput = childSnapshot.val().firstTrain;
-		var fTrainFormat = moment(fTrainInput).format("HHmm");
 		var fFrequency = childSnapshot.val().frequency;
 		
 		var diffTime = moment().diff(moment.unix(fTrainInput), "minutes");
@@ -57,7 +56,7 @@ $("#add-train").on("click", function(event){
 		
 		// Test for correct times and info
 		console.log(minutes);
-		console.log(nextTrainArrival);
+		console.log(fTrainInput);
 		console.log(moment().format("HHmm"));
 		console.log(nextTrainArrival);
 		console.log(moment().format("X"));
@@ -70,4 +69,4 @@ $("#add-train").on("click", function(event){
 			"</td><td>" + minutes + " min</td></tr>");
 
 	});
-});
+
