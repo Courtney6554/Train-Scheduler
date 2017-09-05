@@ -1,0 +1,20 @@
+.container-fluid, .jumbotron {
+	font-family: 'Montserrat', 'Abel', 'Monda' sans-serif;
+	color: #eee;
+	background-color: #444444;
+	margin: 10px;
+	text-align: center;
+	border: 5px double darkgray;
+}
+
+h2 {
+	padding: 25px;
+}
+
+body {
+	background-color: #222222;
+}
+
+.train-info-block {
+	text-align: left;
+}

@@ -72,8 +72,8 @@ $("#add-train").on("click", function(event){
 
 		$("#train-data-table").append("<tr><td>" + fName + 
 			"</td><td>"+ fDestination + 
-			"</td><td>every " + fFrequency + " mins" +
 			"</td><td>" + (moment(fFirstTrain, "X").format("HHmm")) + 
+			"</td><td>every " + fFrequency + " mins" +
 			"</td><td>" + nextTrainArrival + 
 			"</td><td>" + minutes + " min</td></tr>");
 
